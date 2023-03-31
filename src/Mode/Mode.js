@@ -94,7 +94,6 @@ function Mode() {
         <Row>
           <img src={react} width="50px" />
           <Head>Reactjs</Head>
-          Og_187_dev{" "}
         </Row>
         <ImageLa src={La} />
         <Head>Los Angeles</Head>
@@ -110,13 +109,17 @@ function Mode() {
         </Head2>
         <Space />
         <Button type={"submit"} value={"Visit Now"}></Button>
-        <Switch
-          onChange={Changemode}
-          checked={checked}
-          checkedIcon={true}
-          checkedHandleIcon={""}
-          uncheckedIcon={false}
-        />{" "}
+        <Row>
+          {" "}
+          Og_187_dev
+          <Switch
+            onChange={Changemode}
+            checked={checked}
+            checkedIcon={true}
+            checkedHandleIcon={""}
+            uncheckedIcon={false}
+          />{" "}
+        </Row>
       </Testdiv>
     </div>
   );
