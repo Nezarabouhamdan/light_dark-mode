@@ -22,14 +22,13 @@ function Mode() {
   `;
   const ImageLa = styled.img`
   object-fit: fill;
-  width: 25%;
-  height: 40vh;
+  width: 300px;
+  height: 100px;
   opacity: 1;
   border-radius: 2px; 
   @media screen and (max-width: 960px) {
-    box-shadow:-8px -8px  2px grey;
-    height: 25vh;
-    width: 80vw;
+   width: 250px;
+  height: 150px;
 `;
 
   const Head = styled.div`
@@ -41,18 +40,18 @@ function Mode() {
   const Head2 = styled.div`
     font-size: 12px;
     font-weight: 500;
-    width: 25vw;
+    width: 60vw;
     text-align: left;
     color: grey;
   `;
   const Divider = styled.div`
-    width: 25vw;
-    height: 2px;
+    width: 50vw;
+    height: 3px;
     background-color: ${Seconderycolor};
   `;
   const Button = styled.input`
-    width: 10vw;
-    height: 35px;
+    width: 30vw;
+    height: 30px;
     border-radius: 5px;
     background-color: ${Seconderycolor};
     color: ${Primarycolor};
@@ -87,13 +86,7 @@ function Mode() {
   return (
     <div>
       <Testdiv ref={ref}>
-        <ImageLa
-          initial={initial}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          animate={animation}
-          whileHover={{ rotate: 2, scale: 1.02 }}
-          src={La}
-        />
+        <ImageLa src={La} />
         <Head>Los Angeles</Head>
         {/* <Head2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Head2> */}
         <Divider />
@@ -102,8 +95,6 @@ function Mode() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
         </Head2>
         <Button type={"submit"} value={"Visit Now"}></Button>
         <Switch
