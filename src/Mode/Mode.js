@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useAnimation, useInView, motion } from "framer-motion";
 import { useState } from "react";
 import Switch from "react-switch";
-import La from "../assets/desktop-wallpaper-date-palm-red-amazing-luxury-california-tumblr-iphone-aesthetic-palm-tree.jpg";
+import La from "../assets/qbrdv8m8yog41.jpg";
 import react from "../assets/icons8-react-native-144.png";
 function Mode() {
   const [Primarycolor, setColor1] = useState("white");
