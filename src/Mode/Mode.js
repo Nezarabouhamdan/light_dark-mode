@@ -4,7 +4,6 @@ import { useAnimation, useInView, motion } from "framer-motion";
 import { useState } from "react";
 import Switch from "react-switch";
 import La from "../assets/desktop-wallpaper-date-palm-red-amazing-luxury-california-tumblr-iphone-aesthetic-palm-tree.jpg";
-
 function Mode() {
   const [Primarycolor, setColor1] = useState("white");
   const [Seconderycolor, setColor2] = useState("black");
@@ -92,9 +91,7 @@ function Mode() {
         <Divider />
         <Head2>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          eiusmod tempor incididunt ut labore et dolore magna.{" "}
         </Head2>
         <Button type={"submit"} value={"Visit Now"}></Button>
         <Switch
