@@ -4,11 +4,25 @@ import { useAnimation, useInView, motion } from "framer-motion";
 import { useState } from "react";
 import Switch from "react-switch";
 import La from "../assets/desktop-wallpaper-date-palm-red-amazing-luxury-california-tumblr-iphone-aesthetic-palm-tree.jpg";
-
+import react from "../assets/icons8-react-native-144.png";
 function Mode() {
   const [Primarycolor, setColor1] = useState("white");
   const [Seconderycolor, setColor2] = useState("black");
   const [checked, setchecked] = useState(false);
+  function Changemode() {
+    if (Primarycolor == "white") {
+      setColor1("black");
+      setColor2("white");
+      setchecked(!checked);
+    } else {
+      setColor1("white");
+      setColor2("black");
+      setchecked(!checked);
+    }
+  }
+  useEffect(() => {
+    Changemode();
+  }, []);
 
   const Testdiv = styled.div`
     height: 100vh;
@@ -27,9 +41,8 @@ function Mode() {
   opacity: 1;
   border-radius: 2px; 
   @media screen and (max-width: 960px) {
-    box-shadow:-8px -8px  2px grey;
-    height: 25vh;
-    width: 80vw;
+    height: 30vh;
+    width: 60vw;
 `;
 
   const Head = styled.div`
@@ -44,56 +57,46 @@ function Mode() {
     width: 25vw;
     text-align: left;
     color: grey;
+    @media screen and (max-width: 960px) {
+      width: 60vw;
   `;
   const Divider = styled.div`
     width: 25vw;
     height: 2px;
-    background-color: ${Seconderycolor};
+    background-color: ${Seconderycolor};  @media screen and (max-width: 960px) {
+      width: 60vw;
   `;
   const Button = styled.input`
     width: 10vw;
     height: 35px;
     border-radius: 5px;
     background-color: ${Seconderycolor};
-    color: ${Primarycolor};
+    color: ${Primarycolor};  @media screen and (max-width: 960px) {
+      width: 30vw;
   `;
-  function Changemode() {
-    if (Primarycolor == "white") {
-      setColor1("black");
-      setColor2("white");
-      setchecked(!checked);
-    } else {
-      setColor1("white");
-      setColor2("black");
-      setchecked(!checked);
-    }
-  }
-  useEffect(() => {
-    Changemode();
-  }, []);
-
-  const initial = { opacity: 0, y: 50 };
-  const animation = useAnimation();
-  const { ref, inView } = useInView({ threshold: 0.2 });
-  useEffect(() => {
-    if (inView) {
-      console.log("sss");
-      animation.start({
-        opacity: 1,
-        y: 1,
-      });
-    }
-  }, [inView, animation]);
+  const Row = styled.div`
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    color: grey;
+    align-items: center;
+    justify-content: space-evenly;
+    align-contnet: center;
+  `;
+  const Space = styled.div`
+    height: 20px;
+    width: 1px;
+  `;
   return (
     <div>
-      <Testdiv ref={ref}>
-        <ImageLa
-          initial={initial}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          animate={animation}
-          whileHover={{ rotate: 2, scale: 1.02 }}
-          src={La}
-        />
+      <Testdiv>
+        <Row>
+          <img src={react} width="50px" />
+          <Head>Reactjs</Head>
+          Og_187_dev{" "}
+        </Row>
+        <ImageLa src={La} />
         <Head>Los Angeles</Head>
         {/* <Head2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Head2> */}
         <Divider />
@@ -105,6 +108,7 @@ function Mode() {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur.
         </Head2>
+        <Space />
         <Button type={"submit"} value={"Visit Now"}></Button>
         <Switch
           onChange={Changemode}
